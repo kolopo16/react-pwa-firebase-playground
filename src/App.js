@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './header';
 import firebaseConfig from './firebaseConfig';
 // import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +11,7 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
       const database = firebaseConfig().database().ref("/");
       database.on('child_added', snapshot => {
         let message = {
